@@ -28,7 +28,7 @@ asciidoctor {
     def source = project.sourceSets.main.java.srcDirs[0]
     inputs.dir source
 
-    outputDir = file("docs")
+    outputDir = file("build/docs/asciidoc")
     backends = ['html5','pdf']
     requires = ['asciidoctor-diagram']
 
@@ -46,4 +46,8 @@ asciidoctor {
 
 liveReload {
     docRoot asciidoctor.outputDir.canonicalPath
+}
+
+task wrapper (type: Wrapper) {
+    gradleVersion = '3.5'
 }
