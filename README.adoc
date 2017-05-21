@@ -6,6 +6,8 @@
 :sectnums:
 
 = AsciidoctorTemplate
+
+== 概要
 * Asciidoctorを作成する上で、Windows環境でも簡単にライブリロードできるテンプレート。 
 * link:https://takumon.github.io/AsciidocTemplate/.[Asciidoctor文法クイックリファレンスの和訳]
 
