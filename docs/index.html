@@ -522,7 +522,11 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#セクションタイトル">4. セクションタイトル</a></li>
 <li><a href="#_別ファイルのインクルード">5. 別ファイルのインクルード</a></li>
 <li><a href="#_水平罫線と改ページ">6. 水平罫線と改ページ</a></li>
-<li><a href="#_リスト">リスト</a></li>
+<li><a href="#_リスト">7. リスト</a></li>
+<li><a href="#_リンク">8. リンク</a></li>
+<li><a href="#_画像">9. 画像</a></li>
+<li><a href="#_動画">10. 動画</a></li>
+<li><a href="#_ソースコード">11. ソースコード</a></li>
 </ul>
 </div>
 </div>
@@ -1226,7 +1230,9 @@ allow-uri-read AsciidoctorがURIからコンテンツを読み込むために<co
 </div>
 </div>
 </div>
-<h1 id="_リスト" class="sect0"><a class="anchor" href="#_リスト"></a>リスト</h1>
+<div class="sect1">
+<h2 id="_リスト"><a class="anchor" href="#_リスト"></a>7. リスト</h2>
+<div class="sectionbody">
 <div class="listingblock">
 <div class="title">順序無しリスト</div>
 <div class="content">
@@ -1663,7 +1669,7 @@ Asciidoctorとは何ですか?::
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-レベルはネスト可能です。行の冒頭のスペースは重要では有りません(あってもなくてもいいです)。
+ラベルはネスト可能です。行の冒頭のスペースは重要ではありません(あってもなくてもいいです)。
 </td>
 </tr>
 </table>
@@ -1758,9 +1764,785 @@ Asciidoctorとは何ですか?::
 </div>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_リンク"><a class="anchor" href="#_リンク"></a>8. リンク</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">通常のリンク</div>
+<div class="content">
+<pre>http://asciidoctor.org - 自動でリンクになります。
+
+http://asciidoctor.org[Asciidoctor]
+
+https://github.com/asciidoctor[Asciidoctor @ *GitHub*]</pre>
+</div>
+</div>
+<div class="exampleblock result">
+<div class="content">
+<div class="paragraph">
+<p><a href="http://asciidoctor.org" class="bare">http://asciidoctor.org</a> - 自動でリンクになります。</p>
+</div>
+<div class="paragraph">
+<p><a href="http://asciidoctor.org">Asciidoctor</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/asciidoctor">Asciidoctor @ <strong>GitHub</strong></a></p>
+</div>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">スペースと特殊文字を含んだリンク</div>
+<div class="content">
+<pre>link:++http://example.org/?q=[a b]++[空白を含むURL]
+
+link:http://example.org/?q=%5Ba%20b%5D[特殊文字を含んだリンク]</pre>
+</div>
+</div>
+<div class="exampleblock result">
+<div class="content">
+<div class="paragraph">
+<p><a href="http://example.org/?q=[a b]">空白を含むURL</a></p>
+</div>
+<div class="paragraph">
+<p><a href="http://example.org/?q=%5Ba%20b%5D">特殊文字を含んだリンク</a></p>
+</div>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Windows版リンク</div>
+<div class="content">
+<pre>link:\\server\share\whitepaper.pdf[Whitepaper]</pre>
+</div>
+</div>
+<div class="exampleblock result">
+<div class="content">
+<div class="paragraph">
+<p><a href="\\server\share\whitepaper.pdf">Whitepaper</a></p>
+</div>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">相対パス</div>
+<div class="content">
+<pre>link:index.html[ドキュメント]</pre>
+</div>
+</div>
+<div class="exampleblock result">
+<div class="content">
+<div class="paragraph">
+<p><a href="index.html">ドキュメント</a></p>
+</div>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">メールとIRC</div>
+<div class="content">
+<pre>devel@dicsuss.arquillian.org - 自動でリンクになります。
+
+mailto:devel@dicsuss.arquillian.org[Arquillianについて議論する]
+
+mailto:devel-join@discuss.arquillian.org[購読する, 購読します, 参加したいです!] - メールの件名と本文が指定できます。
+
+irc://irc.freenode.org/#asciidoctor</pre>
+</div>
+</div>
+<div class="exampleblock result">
+<div class="content">
+<div class="paragraph">
+<p><a href="mailto:devel@dicsuss.arquillian.org">devel@dicsuss.arquillian.org</a> - 自動でリンクになります。</p>
+</div>
+<div class="paragraph">
+<p><a href="mailto:devel@dicsuss.arquillian.org">Arquillianについて議論する</a></p>
+</div>
+<div class="paragraph">
+<p><a href="mailto:devel-join@discuss.arquillian.org?subject=%E8%B3%BC%E8%AA%AD%E3%81%97%E3%81%BE%E3%81%99&amp;body=%E5%8F%82%E5%8A%A0%E3%81%97%E3%81%9F%E3%81%84%E3%81%A7%E3%81%99!">購読する</a> - メールの件名と本文が指定できます。</p>
+</div>
+<div class="paragraph">
+<p><a href="irc://irc.freenode.org/#asciidoctor" class="bare">irc://irc.freenode.org/#asciidoctor</a></p>
+</div>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">属性付きのリンク(Asciidoctor限定)</div>
+<div class="content">
+<pre>http://discuss.asciidoctor.org[Asciidoctorについて議論する, role="external", window="_blank"]
+
+http://discuss.asciidoctor.org[Asciidoctorについて議論する^]
+
+http://example.org["Google, Yahoo, Bing^", role="teal"]</pre>
+</div>
+</div>
+<div class="exampleblock result">
+<div class="content">
+<div class="paragraph">
+<p><a href="http://discuss.asciidoctor.org" class="external" target="_blank">Asciidoctorについて議論する</a></p>
+</div>
+<div class="paragraph">
+<p><a href="http://discuss.asciidoctor.org" target="_blank">Asciidoctorについて議論する</a></p>
+</div>
+<div class="paragraph">
+<p><a href="http://example.org" class="teal" target="_blank">Google, Yahoo, Bing</a></p>
+</div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+属性付きリンクはAsciidoctor固有の機能です。
+機能を有効にするにはドキュメントの属性に`linkattrs`を指定してください。
+機能有効時は、カンマを含むリンクはクォートで囲む必要があります。
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">インラインアンカー</div>
+<div class="content">
+<pre>[[ブックマーク-A]]インラインアンカーは任意のコンテンツを参照可能にします。
+
+[#ブックマーク-B]#インラインアンカーはこのように指定することもできます。#
+
+anchor:ブックマーク-C[]相互参照
+
+[[ブックマーク-D,最終パラグラフ]]xreflabelは相互参照リンクのリンクとして使用されます。</pre>
+</div>
+</div>
+<div class="exampleblock result">
+<div class="content">
+<div class="paragraph">
+<p><a id="ブックマーク-A"></a>インラインアンカーは任意のコンテンツを参照可能にします。</p>
+</div>
+<div class="paragraph">
+<p><a id="ブックマーク-B"></a>インラインアンカーはこのように指定することもできます。</p>
+</div>
+<div class="paragraph">
+<p><a id="ブックマーク-C"></a>相互参照</p>
+</div>
+<div class="paragraph">
+<p><a id="ブックマーク-D"></a>xreflabelは相互参照リンクのリンクとして使用されます。</p>
+</div>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">内部相互参照</div>
+<div class="content">
+<pre>パラグラフの書き方は &lt;&lt;paragraphs&gt;&gt; を参照してください。
+
+ドキュメントの整理方法は &lt;&lt;section-titles,sections&gt;&gt; を参照してください。</pre>
+</div>
+</div>
+<div class="exampleblock result">
+<div class="content">
+<div class="paragraph">
+<p>パラグラフの書き方は <a href="#paragraphs">[paragraphs]</a> を参照してください。</p>
+</div>
+<div class="paragraph">
+<p>ドキュメントの整理方法は <a href="#section-titles">sections</a> を参照してください。</p>
+</div>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">ドキュメント間の相互参照</div>
+<div class="content">
+<pre>詳細は &lt;&lt;document-b.adoc#section-b,Section B&gt;&gt; を参照してください。
+
+あなたが、&lt;&lt;document-b#section-b,Section B&gt;&gt; から戻ってきた時に会いましょう。</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_画像"><a class="anchor" href="#_画像"></a>9. 画像</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ドキュメント属性の<a href="http://asciidoctor.org/docs/user-manual/#set-the-images-directory">imagedir</a>(デフォルトは空文字)を
+起点にした相対パスを指定します。
+全ての画像パスに対して共通のパスをハードコードするのを避けるために<code>imagedir</code>の指定を推奨します。</p>
+</div>
+<div class="paragraph">
+<p><code>imagedir</code>は絶対パス、相対パス、URLを指定できます。
+絶対パスとURLの場合はimagedirのプレフィックスは付きません。</p>
+</div>
+<div class="listingblock">
+<div class="title">ブロック画像</div>
+<div class="content">
+<pre>image::sunset.jpg[]
+
+image::sunset.jpg[夕日]
+
+.山の夕日
+[#image-sunset]
+[caption="図 1:", link=http://www.flickr.com/photos/javh/5448336655]
+image::sunset.jpg[夕日, 300, 200]
+
+image::http://asciidoctor.org/images/octocat.jpg[GitHub mascot]</pre>
+</div>
+</div>
+<div class="exampleblock result">
+<div class="content">
+<div class="imageblock">
+<div class="content">
+<img src="images/sunset.jpg" alt="sunset">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/sunset.jpg" alt="夕日">
+</div>
+</div>
+<div id="image-sunset" class="imageblock">
+<div class="content">
+<a class="image" href="http://www.flickr.com/photos/javh/5448336655"><img src="images/sunset.jpg" alt="夕日" width="300" height="200"></a>
+</div>
+<div class="title">図 1:山の夕日</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="http://asciidoctor.org/images/octocat.jpg" alt="GitHub mascot">
+</div>
+</div>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">インラン画像</div>
+<div class="content">
+<pre>クリック image:icons/play.png[Play, title="Play"] パーティーを開始する。
+
+クリック image:icons/pause.png[title="Pause"] 休憩する。</pre>
+</div>
+</div>
+<div class="exampleblock result">
+<div class="content">
+<div class="paragraph">
+<p>クリック <span class="image"><img src="images/icons/play.png" alt="Play" title="Play"></span> パーティーを開始する。</p>
+</div>
+<div class="paragraph">
+<p>クリック <span class="image"><img src="images/icons/pause.png" alt="pause" title="Pause"></span> 休憩する。</p>
+</div>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<code>image</code>というキーワードの後にある二つのコロンはブロック要素の画像を示し、
+一つの時はインライン要素の画像を示します。文章と同じ行に画像を挿入するならインランを使いますが、
+それ以外の場合場合はブロック要素の画像を使用すべきです。
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">位置を指定したインライン画像</div>
+<div class="content">
+<pre>image:sunset.jpg[夕日, 150, 150, role="right"] なんて美しい夕日！</pre>
+</div>
+</div>
+<div class="exampleblock result">
+<div class="content">
+<div class="paragraph">
+<p><span class="image right"><img src="images/sunset.jpg" alt="夕日" width="150" height="150"></span> なんて美しい夕日！</p>
+</div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<a href="http://asciidoctor.org/docs/user-manual/#putting-images-in-their-place">画像の位置とフレーム</a>には様々な属性を指定できます。
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">画像データ埋め込み</div>
+<div class="content">
+<pre>= ドキュメントタイトル
+:data-uri:</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>data-uri</code>を設定すると、アイコンも含め全ての画像がドキュメントの中に<a href="https://developer.mozilla.org/en-US/docs/data_URIs">data-uri</a>と埋め込まれます。
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<code>data-uri</code>の代わりに、コマンドラインで<code>-a data-uri</code>オプションを付けることでも可能です。
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_動画"><a class="anchor" href="#_動画"></a>10. 動画</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">ブロック要素</div>
+<div class="content">
+<pre>video::video_file.mp4[]
+
+
+video::video_file.mp4[width=640, start=140, options=autoplay]</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Youtube</div>
+<div class="content">
+<pre>video::TabMg56daZ0[youtube]</pre>
+</div>
+</div>
+<div class="exampleblock result">
+<div class="content">
+<div class="videoblock">
+<div class="content">
+<iframe src="https://www.youtube.com/embed/TabMg56daZ0?rel=0&amp;hl=ja" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Vimeo</div>
+<div class="content">
+<pre>video::22439234[vimeo]</pre>
+</div>
+</div>
+<div class="exampleblock result">
+<div class="content">
+<div class="videoblock">
+<div class="content">
+<iframe src="https://player.vimeo.com/video/22439234" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<a href="http://asciidoctor.org/docs/user-manual/#video">追加の属性とオプション</a>を設定することで動画を制御できます。
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ソースコード"><a class="anchor" href="#_ソースコード"></a>11. ソースコード</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">インライン要素</div>
+<div class="content">
+<pre>`types` や `methods` のような参照コード。</pre>
+</div>
+</div>
+<div class="exampleblock result">
+<div class="content">
+<div class="paragraph">
+<p><code>types</code> や <code>methods</code> のような参照コード。</p>
+</div>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">リテラル（１行）</div>
+<div class="content">
+<pre> コードスニペットは行冒頭に１つのスペースを挿入してください。</pre>
+</div>
+</div>
+<div class="exampleblock result">
+<div class="content">
+<div class="literalblock">
+<div class="content">
+<pre>コードスニペットは行冒頭に１つのスペースを挿入してください。</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">リテラル（ブロック要素）</div>
+<div class="content">
+<pre>....
+error: The requested operation returned error: 1954 Forbidden search for defensive operations manual
+absolutely fatal: operation initiation lost in the dodecahedron of doom
+would you like to die again? y/n
+....</pre>
+</div>
+</div>
+<div class="exampleblock result">
+<div class="content">
+<div class="literalblock">
+<div class="content">
+<pre>error: The requested operation returned error: 1954 Forbidden search for defensive operations manual
+absolutely fatal: operation initiation lost in the dodecahedron of doom
+would you like to die again? y/n</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">タイトル付きブロック要素（シンタックスハイライトなし）</div>
+<div class="content">
+<pre>.Gemfile.lock
+----
+GEM
+  remote: https://rubygems.org/
+  specs:
+    asciidoctor (0.1.4)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  asciidoctor (~&gt; 0.1.4)
+----</pre>
+</div>
+</div>
+<div class="exampleblock result">
+<div class="content">
+<div class="listingblock">
+<div class="title">Gemfile.lock</div>
+<div class="content">
+<pre>GEM
+  remote: https://rubygems.org/
+  specs:
+    asciidoctor (0.1.4)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  asciidoctor (~&gt; 0.1.4)</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">タイトル付きブロック要素（シンタックスハイライトあり）</div>
+<div class="content">
+<pre>[[app-listing]]
+[source,ruby]
+.app.rb
+----
+require 'sinatra'
+
+get '/hi' do
+  "Hello World!"
+end
+----</pre>
+</div>
+</div>
+<div class="exampleblock result">
+<div class="content">
+<div id="app-listing" class="listingblock">
+<div class="title">app.rb</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="ruby">require <span class="string"><span class="delimiter">'</span><span class="content">sinatra</span><span class="delimiter">'</span></span>
+
+get <span class="string"><span class="delimiter">'</span><span class="content">/hi</span><span class="delimiter">'</span></span> <span class="keyword">do</span>
+  <span class="string"><span class="delimiter">&quot;</span><span class="content">Hello World!</span><span class="delimiter">&quot;</span></span>
+<span class="keyword">end</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">吹き出し付きブロック要素</div>
+<div class="content">
+<pre>[source,ruby]
+----
+require 'sinatra' // &lt;1&gt;
+
+get '/hi' do // &lt;2&gt;
+  "Hello World!" // &lt;3&gt;
+end
+----
+&lt;1&gt; Library import
+&lt;2&gt; URL mapping
+&lt;3&gt; HTTP response body</pre>
+</div>
+</div>
+<div class="exampleblock result">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="ruby">require <span class="string"><span class="delimiter">'</span><span class="content">sinatra</span><span class="delimiter">'</span></span> <i class="conum" data-value="1"></i><b>(1)</b>
+
+get <span class="string"><span class="delimiter">'</span><span class="content">/hi</span><span class="delimiter">'</span></span> <span class="keyword">do</span> <i class="conum" data-value="2"></i><b>(2)</b>
+  <span class="string"><span class="delimiter">&quot;</span><span class="content">Hello World!</span><span class="delimiter">&quot;</span></span> <i class="conum" data-value="3"></i><b>(3)</b>
+<span class="keyword">end</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Library import</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>URL mapping</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>HTTP response body</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">いろいろな吹き出し付きブロック要素</div>
+<div class="content">
+<pre>----
+ソースコード //&lt;1&gt;
+ソースコード #&lt;2&gt;
+ソースコード ;;&lt;3&gt;
+----
+&lt;1&gt; C言語用の行末吹き出しコメント
+&lt;2&gt; Ruby、Python、Perlなどの行末吹き出しコメント
+&lt;3&gt; Clojure用の行末吹き出しコメント</pre>
+</div>
+</div>
+<div class="exampleblock result">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre>ソースコード <i class="conum" data-value="1"></i><b>(1)</b>
+ソースコード <i class="conum" data-value="2"></i><b>(2)</b>
+ソースコード <i class="conum" data-value="3"></i><b>(3)</b></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>C言語用の行末吹き出しコメント</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Ruby、Python、Perlなどの行末吹き出しコメント</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Clojure用の行末吹き出しコメント</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">吹き出し付きXMLブロック要素</div>
+<div class="content">
+<pre>[source,xml]
+----
+&lt;section&gt;
+  &lt;title&gt;Section Title&lt;/title&gt; &lt;!--1--&gt;
+&lt;/section&gt;
+----
+&lt;1&gt; セクションタイトルをここで定義します。</pre>
+</div>
+</div>
+<div class="exampleblock result">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;section&gt;</span>
+  <span class="tag">&lt;title&gt;</span>Section Title<span class="tag">&lt;/title&gt;</span> <i class="conum" data-value="1"></i><b>(1)</b>
+<span class="tag">&lt;/section&gt;</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>セクションタイトルをここで定義します。</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">ソースコードファイル読み込み</div>
+<div class="content">
+<pre>[source,java]
+----
+include::StringUtils.java[]
+----</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">ソースコードファイル読み込み(ソースコードフォルダからの相対パス指定)</div>
+<div class="content">
+<pre>[source,java]
+----
+include::{sourcedir}/StringUtils.java[]
+----</pre>
+</div>
+</div>
+<div class="exampleblock result">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">example</span>;
+
+<span class="directive">public</span> <span class="type">class</span> <span class="class">StringUtils</span> {
+    <span class="directive">public</span> <span class="type">boolean</span> contains(<span class="predefined-type">String</span> a, <span class="predefined-type">String</span> b) {
+        <span class="keyword">if</span>(a == <span class="predefined-constant">null</span>) {
+          <span class="keyword">return</span> <span class="predefined-constant">false</span>;
+        }
+
+        <span class="keyword">return</span> a.contains(b);
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">ソースコードファイル読み込み(インデント指定)</div>
+<div class="content">
+<pre>[source,java,indent=0]
+----
+include::{sourcedir}/StringUtils.java[lines=5..7]
+----
+
+[source,java,indent=1]
+----
+include::{sourcedir}/StringUtils.java[lines=5..7]
+----
+
+
+[source,java,indent=2]
+----
+include::{sourcedir}/StringUtils.java[lines=5..7]
+----</pre>
+</div>
+</div>
+<div class="exampleblock result">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">if</span>(a == <span class="predefined-constant">null</span>) {
+  <span class="keyword">return</span> <span class="predefined-constant">false</span>;
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"> <span class="keyword">if</span>(a == <span class="predefined-constant">null</span>) {
+   <span class="keyword">return</span> <span class="predefined-constant">false</span>;
+ }</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">  <span class="keyword">if</span>(a == <span class="predefined-constant">null</span>) {
+    <span class="keyword">return</span> <span class="predefined-constant">false</span>;
+  }</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>indent</code>が0の場合、インデントは除去されます。（タブは4つのスペースに置換されます。）</p>
+</li>
+<li>
+<p><code>indent</code>が1以上の場合、基本のインデントレベルが指定した値になります。（タブは4つのスペースに置換されます。）</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">区切り文字なしのブロック要素</div>
+<div class="content">
+<pre>[source,xml]
+&lt;meta name="viewport"
+  content="width=device-width, initial-scale=1.0"&gt;
+
+この行は通常のコンテンツです。</pre>
+</div>
+</div>
+<div class="exampleblock result">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;meta</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">viewport</span><span class="delimiter">&quot;</span></span>
+  <span class="attribute-name">content</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">width=device-width, initial-scale=1.0</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>この行は通常のコンテンツです。</p>
+</div>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">シンタックスハイライトを有効にするには</div>
+<div class="paragraph">
+<p><code>source-highlighter</code>属性をドキュメントヘッダーに付けるか、実行時に引数で渡すことで有効になります。</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>:source-highlighter: pygments</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>値は<code>coderay</code>、<code>highlightjs</code>、<code>prettify</code>、<code>pygments</code>を指定できます。</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-05-21 21:57:28 JST
+Last updated 2017-05-27 13:56:08 JST
 </div>
 </div>
 </body>
