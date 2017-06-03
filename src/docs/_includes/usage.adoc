@@ -12,14 +12,16 @@ $ ./gradlew asciidoctor
 * build/docs/asciidocフォルダ配下にHTMLとPDFが生成されます。``index.html``をブラウザで開くと生成されたHTMLが見れます。``index.pdf``をPDFビューワーで開くとPDFが見れます。
 [source, bash]
 ----
-$ tree /f build/docs/asciidoc
+$$ tree /f build/docs/asciidoc/
 build/docs/asciidoc/
-├── html5
+├── html5                    // <1>
 │   ├── css
+│   │   └── index.css
 │   ├── images
 │   ├── index.html
 │   └── js
-├── images
+│       └── index.js
+├── images                   // <2>
 │   ├── github
 │   │   ├── blockquote-arrow.png
 │   │   └── li-chevron.png
@@ -34,12 +36,18 @@ build/docs/asciidoc/
 │       ├── info-bg.jpg
 │       ├── pre-bg.jpg
 │       └── sidebar-bg.jpg
-└── pdf
+└── pdf                       // <3>
     ├── css
+    │   └── index.css
     ├── images
     ├── index.pdf
     └── js
+        └── index.js
 ----
+<1> HTML形式のドキュメント
+<2> HTML形式のドキュメントのテーマ用の画像
+<3> PDF形式のドキュメント
+
 
 
 === ライブリロードを使う場合
