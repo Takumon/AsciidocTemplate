@@ -1,0 +1,110 @@
+== 使用方法
+=== ドキュメントの生成
+NOTE: プロキシ環境下の場合は、事前に<<_gradleのプロキシ設定, Gradleのプロキシ設定>>を行ってください。
+
+* プロジェクト直下で、下記を実行する。
+
+[source, bash]
+----
+$ cd AsciidocTemplate
+$ ./gradlew asciidoctor
+----
+
+* build/docs/asciidocフォルダ配下にHTMLとPDFが生成される。``index.html``をブラウザで開くと生成されたHTMLが見れる。`index.pdf`をPDFビューワーで開くとPDFが見れる。
+[source, bash]
+----
+$ tree /f build/docs/asciidoc
+build/docs/asciidoc/
+├── html5
+│   ├── css
+│   ├── images
+│   ├── index.html
+│   └── js
+├── images
+│   ├── github
+│   │   ├── blockquote-arrow.png
+│   │   └── li-chevron.png
+│   ├── golo
+│   │   ├── body-bg.png
+│   │   └── pre-bg.png
+│   ├── maker
+│   │   └── body-bg.png
+│   └── riak
+│       ├── body-bg.jpg
+│       ├── footer-bg.jpg
+│       ├── info-bg.jpg
+│       ├── pre-bg.jpg
+│       └── sidebar-bg.jpg
+└── pdf
+    ├── css
+    ├── images
+    ├── index.pdf
+    └── js
+----
+
+
+=== ライブリロードを使う場合
+adocファイルを修正したらリアルタイムにHTMLを出力し、
+ブラウザに修正が反映されるようにする。
+
+==== 手順
+* プロジェクト直下で下記を実行する。
+
+[source, bash]
+----
+$ cd AsciidocTemplate
+$ ./gradlew -t asciidoctor
+----
+
+* もう一つ別のコマンドプロンプト(またはターミナル)を起動し、プロジェクト直下で下記を実行する。
+
+[source, bash]
+----
+$ cd AsciidocTemplate
+$ ./gradlew liveReload
+----
+
+* Chromeで http://localhost:35729/html5/ を開く。
+
+* ChromeのLiveReload機能をONにする（右上にあるLiveReloadアイコンをクリックする）
+
+* この状態でadocファイルを編集するとブラウザにリアルタイムに反映される。
+
+
+== Gradleのプロキシ設定
+* プロジェクト直下の`gradle.properties`を編集する。
+
+.gradle.properties
+[source]
+----
+######################################
+# gradlew実行時のプロキシ設定
+######################################
+# http
+#systemProp.http.proxyHost = [your proxy host]   // <1>
+#systemProp.http.proxyPort = [your proxy port]   // <2>
+#systemProp.http.proxyUser = [your proxy user]   // <3>
+#systemProp.http.proxyPassword = [your proxy password]   // <4>
+#systemProp.http.nonProxyHosts = localhost   // <5>
+
+# https    // <6>
+#systemProp.https.proxyHost = [your proxy host]
+#systemProp.https.proxyPort = [your proxy port]
+#systemProp.https.proxyUser = [your proxy user]
+#systemProp.https.proxyPassword = [your proxy password]
+#systemProp.https.nonProxyHosts = localhost
+
+org.gradle.jvmargs = -Dfile.encoding=UTF-8
+org.gradle.daemon = true
+#org.gradle.java.home = [JDK install dir path]
+----
+<1> コメントアウトしてプロキシのホストを指定する。
+<1> コメントアウトしてプロキシのポートを指定する。
+<3> 認証が必要であれば、コメントアウトしてユーザ名を指定する。
+<4> 認証が必要であれば、コメントアウトしてパスワードを指定する。
+<5> プロキシ除外対象のホストがあれば``|``区切りで指定する。
+<6> httpsも同様に設定が必要であればコメントアウトして、それぞれ値を指定する。
+
+
+
+

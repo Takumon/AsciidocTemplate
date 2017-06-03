@@ -1,0 +1,92 @@
+= AsciidoctorTemplate
+// DocTypeを指定
+:page-layout: docs
+// ドキュメントの説明。
+:description: Javaさえ動く環境であればAsciidoctorすぐに始められる雛形プロジェクトです。
+// 検索キーワード
+:keywords: AsciiDoc, Asciidoctor, Gradle
+// 言語に日本語を指定する。
+:lang: ja
+// font awsomeを使用する。
+:icons: font
+// 目次を表示する。左側に表示する。
+:toc: left
+// 目次を第何レベルまで表示するか。
+:toclevels: 2
+// タイトルにリンクをつける。(属性を定義するだけでリンクが付く)
+:linkattrs:
+// 章番号を付けるか。(属性を定義するだけで章番号が付く)
+:sectnums:
+// ソースコードをハイライトする。
+:source-highlighter: coderay
+// UIマクロを有効にする
+:experimental:
+// 変数定義。各資産のルートフォルダ
+// 画像
+:imagesdir: images
+// インクルード用adocファイル
+:includedir: _includes
+// ソース(Javaソースなど)
+:sourcedir: sources
+// 各ラベルの日本語定義
+:toc-title: 目次
+:preface-title: はじめに
+:appendix-caption: 付録
+:caution-caption: 注意
+:example-caption: 例
+:figure-caption: 図
+:important-caption: 重要
+:last-update-label: 最終更新
+:manname-title: 名前
+:note-caption: 注記
+:preface-title: まえがき
+:table-caption: 表
+:tip-caption: ヒント
+:toc-title: 目次
+:untitled-label: 無題
+:version-label: バージョン
+:warning-caption: 警告
+:listing-caption: リスト
+// デフォルトの章番号の接頭辞「Chapter.」が表示されないよう、値を空で設定する。
+:sectanchors:
+
+
+// 独自CSSとJSの読み込み
+++++
+<link rel="stylesheet" href="css/index.css"></link>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+  crossorigin="anonymous"></script>
+<script src="js/index.js"></script>
+++++
+
+{description}
+
+
+toc::[]
+
+
+== 前提条件
+事前にインストールしておくもの
+
+* Java
+* Chromeの https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=ja[LiveReload]
+* Gitクライアント（必須ではない）
+
+
+== インストール方法
+* ``https://github.com/Takumon/AsciidocTemplate.git``をクローンする。（Gitクライアントをインストールしていない場合はGithubのlink::https://github.com/Takumon/AsciidocTemplate[Takumon/AsciidocTemplate]で btn:[Clone or downloadzip]  > btn:[Download ZIP] をクリックし、ダウンロードしてZIPファイルを解凍する）
+[source, bash]
+----
+$ git clone https://github.com/Takumon/AsciidocTemplate.git
+----
+
+// adocファイルを別ファイルに切り出す場合は、下記のようにしてください。
+include::{includedir}/usage.adoc[]
+
+== ページの公開方法
+link:https://pages.github.com/[GitHub Pages]を使用してドキュメントを公開できるように、ドキュメント生成時に``docs``フォルダ配下にもドキュメントを出力するようにしています。
+
+
+
