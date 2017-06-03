@@ -61,10 +61,14 @@ asciidoctor {
         }
 
         // 出力先の資産をGithub Pagesの公開フォルダにコピー
-        delete "docs"
+        delete 'docs'
         copy {
             from outputDir
             into "docs"
+        }
+        copy {
+           from "src/githubpages/index.html"
+           into "docs"
         }
     }
 }

@@ -88,5 +88,10 @@ include::{includedir}/usage.adoc[]
 == ページの公開方法
 link:https://pages.github.com/[GitHub Pages]を使用してドキュメントを公開できるように、ドキュメント生成時に``docs``フォルダ配下にもドキュメントを出力するようにしています。
 
+* Githubのリポジトリでbtn:[setting]を選択します。
+
+* GitHub PagesのSourceで``master branch /docs folder``を選択しbtn:[Save]ボタンをクリックします。
+
+* GitHub PagesのSourceにURLが記載されているので、そこにアクセスするとドキュメントが見れます。
 
 
