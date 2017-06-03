@@ -97,7 +97,7 @@ $ cd AsciidocTemplate
 $ ./gradlew asciidoctor
 ----
 
-* build/docs/asciidocフォルダ配下にHTMLとPDFが生成される。``index.html``をブラウザで開くと生成されたHTMLが見れる。`index.pdf`をPDFビューワーで開くとPDFが見れる。
+* build/docs/asciidocフォルダ配下にHTMLとPDFが生成される。``index.html``をブラウザで開くと生成されたHTMLが見れる。``index.pdf``をPDFビューワーで開くとPDFが見れる。
 [source, bash]
 ----
 $ tree /f build/docs/asciidoc
