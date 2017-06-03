@@ -1,52 +1,132 @@
-:lang:        ja
-:icons:       font
-:docinfo:
-:toc-title: 目次
-:toc: left
-:sectnums:
-
 = AsciidoctorTemplate
+// DocTypeを指定
+:page-layout: docs
+// ドキュメントの説明。
+:description: Javaさえ動く環境であればAsciidoctorすぐに始められる雛形プロジェクトです。
+// 検索キーワード
+:keywords: AsciiDoc, Asciidoctor, Gradle
+// 言語に日本語を指定する。
+:lang: ja
+// font awsomeを使用する。
+:icons: font
+// 目次を表示する。左側に表示する。
+:toc: left
+// 目次を第何レベルまで表示するか。
+:toclevels: 2
+// タイトルにリンクをつける。(属性を定義するだけでリンクが付く)
+:linkattrs:
+// 章番号を付けるか。(属性を定義するだけで章番号が付く)
+:sectnums:
+// ソースコードをハイライトする。
+:source-highlighter: coderay
+// UIマクロを有効にする
+:experimental:
+// 変数定義。各資産のルートフォルダ
+// 画像
+:imagesdir: images
+// インクルード用adocファイル
+:includedir: _includes
+// ソース(Javaソースなど)
+:sourcedir: sources
+// 各ラベルの日本語定義
+:toc-title: 目次
+:preface-title: はじめに
+:appendix-caption: 付録
+:caution-caption: 注意
+:example-caption: 例
+:figure-caption: 図
+:important-caption: 重要
+:last-update-label: 最終更新
+:manname-title: 名前
+:note-caption: 注記
+:preface-title: まえがき
+:table-caption: 表
+:tip-caption: ヒント
+:toc-title: 目次
+:untitled-label: 無題
+:version-label: バージョン
+:warning-caption: 警告
+:listing-caption: リスト
+// デフォルトの章番号の接頭辞「Chapter.」が表示されないよう、値を空で設定する。
+:sectanchors:
 
-== 概要
-* Asciidoctorを作成する上で、Windows環境でも簡単にライブリロードできるテンプレート。 
-* link:https://takumon.github.io/AsciidocTemplate/.[Asciidoctor文法クイックリファレンスの和訳]
+
+// 独自CSSとJSの読み込み
+++++
+<link rel="stylesheet" href="css/index.css"></link>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+  crossorigin="anonymous"></script>
+<script src="js/index.js"></script>
+++++
+
+{description}
+
+
+toc::[]
+
+
+== 詳細はこちら
+https://takumon.github.io/AsciidocTemplate/html5/index.html
 
 == 前提条件
 事前にインストールしておくもの
 
-* Chromeの https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=ja[LiveReload]
-* Gitクライアント
 * Java
-* Graphviz
+* Chromeの https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=ja[LiveReload]
+* Gitクライアント（必須ではない）
 
-※ プロジェクトで https://github.com/asciidoctor/asciidoctor-gradle-plugin[asciidoctor/asciidoctor-gradle-plugin]を使用しており内部でJRubyを使っているので、Rubyのインストールは不要。
-
-=== Grapvizのインストール
-* link:http://www.graphviz.org/Download_windows.php[公式サイト]でmsiファイルをダウンロード。
-* msiファイルをクリックしてウィザードに従ってインストールする。
-* dotコマンドが使えるようになって入ればOK
-[source, bash]
-----
-$ dot -v
-dot - graphviz version 2.40.1 (20161225.0304)
-----
 
 == インストール方法
-* https://github.com/Takumon/AsciidocTemplate.git[Takumon/AsciidocTemplate]をクローンする。
+* ``https://github.com/Takumon/AsciidocTemplate.git``をクローンする。（Gitクライアントをインストールしていない場合はGithubのlink::https://github.com/Takumon/AsciidocTemplate[Takumon/AsciidocTemplate]で btn:[Clone or downloadzip]  > btn:[Download ZIP] をクリックし、ダウンロードしてZIPファイルを解凍する）
 [source, bash]
 ----
 $ git clone https://github.com/Takumon/AsciidocTemplate.git
 ----
 
 == 使用方法
-=== 通常の場合
-[.lead]
-プロジェクト直下で下記を実行するとdocsフォルダ配下にHTMLとPDFが生成される。
+=== ドキュメントの生成
+NOTE: プロキシ環境下の場合は、事前に<<_gradleのプロキシ設定, Gradleのプロキシ設定>>を行ってください。
+
+* プロジェクト直下で、下記を実行する。
 
 [source, bash]
 ----
 $ cd AsciidocTemplate
 $ ./gradlew asciidoctor
+----
+
+* build/docs/asciidocフォルダ配下にHTMLとPDFが生成される。``index.html``をブラウザで開くと生成されたHTMLが見れる。`index.pdf`をPDFビューワーで開くとPDFが見れる。
+[source, bash]
+----
+$ tree /f build/docs/asciidoc
+build/docs/asciidoc/
+├── html5
+│   ├── css
+│   ├── images
+│   ├── index.html
+│   └── js
+├── images
+│   ├── github
+│   │   ├── blockquote-arrow.png
+│   │   └── li-chevron.png
+│   ├── golo
+│   │   ├── body-bg.png
+│   │   └── pre-bg.png
+│   ├── maker
+│   │   └── body-bg.png
+│   └── riak
+│       ├── body-bg.jpg
+│       ├── footer-bg.jpg
+│       ├── info-bg.jpg
+│       ├── pre-bg.jpg
+│       └── sidebar-bg.jpg
+└── pdf
+    ├── css
+    ├── images
+    ├── index.pdf
+    └── js
 ----
 
 
@@ -55,7 +135,6 @@ adocファイルを修正したらリアルタイムにHTMLを出力し、
 ブラウザに修正が反映されるようにする。
 
 ==== 手順
-[.lead]
 * プロジェクト直下で下記を実行する。
 
 [source, bash]
@@ -64,7 +143,7 @@ $ cd AsciidocTemplate
 $ ./gradlew -t asciidoctor
 ----
 
-* もう一つ別のターミナルを起動し、プロジェクト直下で下記を実行する。
+* もう一つ別のコマンドプロンプト(またはターミナル)を起動し、プロジェクト直下で下記を実行する。
 
 [source, bash]
 ----
@@ -72,8 +151,55 @@ $ cd AsciidocTemplate
 $ ./gradlew liveReload
 ----
 
-* Chromeで http://localhost:35729/html5/sample.html を開く。
+* Chromeで http://localhost:35729/html5/ を開く。
 
 * ChromeのLiveReload機能をONにする（右上にあるLiveReloadアイコンをクリックする）
 
 * この状態でadocファイルを編集するとブラウザにリアルタイムに反映される。
+
+
+== Gradleのプロキシ設定
+* プロジェクト直下の`gradle.properties`を編集する。
+
+.gradle.properties
+[source]
+----
+######################################
+# gradlew実行時のプロキシ設定
+######################################
+# http
+#systemProp.http.proxyHost = [your proxy host]   // <1>
+#systemProp.http.proxyPort = [your proxy port]   // <2>
+#systemProp.http.proxyUser = [your proxy user]   // <3>
+#systemProp.http.proxyPassword = [your proxy password]   // <4>
+#systemProp.http.nonProxyHosts = localhost   // <5>
+
+# https    // <6>
+#systemProp.https.proxyHost = [your proxy host]
+#systemProp.https.proxyPort = [your proxy port]
+#systemProp.https.proxyUser = [your proxy user]
+#systemProp.https.proxyPassword = [your proxy password]
+#systemProp.https.nonProxyHosts = localhost
+
+org.gradle.jvmargs = -Dfile.encoding=UTF-8
+org.gradle.daemon = true
+#org.gradle.java.home = [JDK install dir path]
+----
+<1> コメントアウトしてプロキシのホストを指定する。
+<1> コメントアウトしてプロキシのポートを指定する。
+<3> 認証が必要であれば、コメントアウトしてユーザ名を指定する。
+<4> 認証が必要であれば、コメントアウトしてパスワードを指定する。
+<5> プロキシ除外対象のホストがあれば``|``区切りで指定する。
+<6> httpsも同様に設定が必要であればコメントアウトして、それぞれ値を指定する。
+
+
+== ページの公開方法
+link:https://pages.github.com/[GitHub Pages]を使用してドキュメントを公開できるように、ドキュメント生成時に``docs``フォルダ配下にもドキュメントを出力するようにしています。
+
+* Githubのリポジトリでbtn:[setting]を選択します。
+
+* GitHub PagesのSourceで``master branch /docs folder``を選択しbtn:[Save]ボタンをクリックします。
+
+* GitHub PagesのSourceにURLが記載されているので、そこにアクセスするとドキュメントが見れます。
+
+
