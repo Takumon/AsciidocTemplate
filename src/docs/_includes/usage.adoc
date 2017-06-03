@@ -1,16 +1,15 @@
 == 使用方法
 === ドキュメントの生成
-NOTE: プロキシ環境下の場合は、事前に<<_gradleのプロキシ設定, Gradleのプロキシ設定>>を行ってください。
+NOTE: プロキシ環境下の場合は、事前に<<_gradleのプロキシ設定, Gradleのプロキシ設定>>をしてださい。
 
-* プロジェクト直下で、下記を実行する。
+* プロジェクト直下で、下記を実行します。
 
 [source, bash]
 ----
-$ cd AsciidocTemplate
 $ ./gradlew asciidoctor
 ----
 
-* build/docs/asciidocフォルダ配下にHTMLとPDFが生成される。``index.html``をブラウザで開くと生成されたHTMLが見れる。``index.pdf``をPDFビューワーで開くとPDFが見れる。
+* build/docs/asciidocフォルダ配下にHTMLとPDFが生成されます。``index.html``をブラウザで開くと生成されたHTMLが見れます。``index.pdf``をPDFビューワーで開くとPDFが見れます。
 [source, bash]
 ----
 $ tree /f build/docs/asciidoc
@@ -44,35 +43,33 @@ build/docs/asciidoc/
 
 
 === ライブリロードを使う場合
-adocファイルを修正したらリアルタイムにHTMLを出力し、
-ブラウザに修正が反映されるようにする。
+adocファイルを修正するとHTMLを出力し、
+ブラウザに修正がリアルタイムに反映されるようにします。
 
 ==== 手順
-* プロジェクト直下で下記を実行する。
+* プロジェクト直下で下記を実行します。
 
 [source, bash]
 ----
-$ cd AsciidocTemplate
 $ ./gradlew -t asciidoctor
 ----
 
-* もう一つ別のコマンドプロンプト(またはターミナル)を起動し、プロジェクト直下で下記を実行する。
+* もう一つ別のコマンドプロンプト(またはターミナル)を起動し、プロジェクト直下で下記を実行します。
 
 [source, bash]
 ----
-$ cd AsciidocTemplate
 $ ./gradlew liveReload
 ----
 
-* Chromeで http://localhost:35729/html5/ を開く。
+* Chromeで http://localhost:35729/html5/ を開きます。
 
-* ChromeのLiveReload機能をONにする（右上にあるLiveReloadアイコンをクリックする）
+* ChromeのLiveReload機能をONにします。（右上にあるLiveReloadアイコンをクリックします）
 
-* この状態でadocファイルを編集するとブラウザにリアルタイムに反映される。
+* この状態でadocファイルを編集するとブラウザに編集内容がリアルタイムに反映されます。
 
 
 == Gradleのプロキシ設定
-* プロジェクト直下の`gradle.properties`を編集する。
+* プロジェクト直下の``gradle.properties``を編集します。
 
 .gradle.properties
 [source]
@@ -98,12 +95,12 @@ org.gradle.jvmargs = -Dfile.encoding=UTF-8
 org.gradle.daemon = true
 #org.gradle.java.home = [JDK install dir path]
 ----
-<1> コメントアウトしてプロキシのホストを指定する。
-<1> コメントアウトしてプロキシのポートを指定する。
-<3> 認証が必要であれば、コメントアウトしてユーザ名を指定する。
-<4> 認証が必要であれば、コメントアウトしてパスワードを指定する。
-<5> プロキシ除外対象のホストがあれば``|``区切りで指定する。
-<6> httpsも同様に設定が必要であればコメントアウトして、それぞれ値を指定する。
+<1> コメントアウトしてプロキシのホストを指定します。
+<1> コメントアウトしてプロキシのポートを指定します。
+<3> 認証が必要であれば、コメントアウトしてユーザ名を指定します。
+<4> 認証が必要であれば、コメントアウトしてパスワードを指定します。
+<5> プロキシ除外対象のホストがあれば``|``区切りで指定します。
+<6> httpsも同様に設定が必要であればコメントアウトして、それぞれ値を指定します。
 
 
 

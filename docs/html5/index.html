@@ -906,7 +906,7 @@ table.CodeRay td.code>pre{padding:0}
 <div class="ulist">
 <ul>
 <li>
-<p><code><a href="https://github.com/Takumon/AsciidocTemplate.git" class="bare">https://github.com/Takumon/AsciidocTemplate.git</a></code>をクローンする。（Gitクライアントをインストールしていない場合はGithubの<a href=":https://github.com/Takumon/AsciidocTemplate">Takumon/AsciidocTemplate</a>で <b class="button">Clone or downloadzip</b>  &gt; <b class="button">Download ZIP</b> をクリックし、ダウンロードしてZIPファイルを解凍する）</p>
+<p><code><a href="https://github.com/Takumon/AsciidocTemplate.git" class="bare">https://github.com/Takumon/AsciidocTemplate.git</a></code>をクローンします。（Gitクライアントをインストールしていない場合はGithubの<a href=":https://github.com/Takumon/AsciidocTemplate">Takumon/AsciidocTemplate</a>で <b class="button">Clone or downloadzip</b>  &gt; <b class="button">Download ZIP</b> をクリックし、ダウンロードしてZIPファイルを解凍してください）</p>
 </li>
 </ul>
 </div>
@@ -929,7 +929,7 @@ table.CodeRay td.code>pre{padding:0}
 <i class="fa icon-note" title="注記"></i>
 </td>
 <td class="content">
-プロキシ環境下の場合は、事前に<a href="#_gradleのプロキシ設定">Gradleのプロキシ設定</a>を行ってください。
+プロキシ環境下の場合は、事前に<a href="#_gradleのプロキシ設定">Gradleのプロキシ設定</a>をしてださい。
 </td>
 </tr>
 </table>
@@ -937,20 +937,19 @@ table.CodeRay td.code>pre{padding:0}
 <div class="ulist">
 <ul>
 <li>
-<p>プロジェクト直下で、下記を実行する。</p>
+<p>プロジェクト直下で、下記を実行します。</p>
 </li>
 </ul>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="bash">$ cd AsciidocTemplate
-$ ./gradlew asciidoctor</code></pre>
+<pre class="CodeRay highlight"><code data-lang="bash">$ ./gradlew asciidoctor</code></pre>
 </div>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>build/docs/asciidocフォルダ配下にHTMLとPDFが生成される。<code>index.html</code>をブラウザで開くと生成されたHTMLが見れる。<code>index.pdf</code>をPDFビューワーで開くとPDFが見れる。</p>
+<p>build/docs/asciidocフォルダ配下にHTMLとPDFが生成されます。<code>index.html</code>をブラウザで開くと生成されたHTMLが見れます。<code>index.pdf</code>をPDFビューワーで開くとPDFが見れます。</p>
 </li>
 </ul>
 </div>
@@ -989,47 +988,45 @@ build/docs/asciidoc/
 <div class="sect2">
 <h3 id="_ライブリロードを使う場合"><a class="anchor" href="#_ライブリロードを使う場合"></a>3.2. ライブリロードを使う場合</h3>
 <div class="paragraph">
-<p>adocファイルを修正したらリアルタイムにHTMLを出力し、
-ブラウザに修正が反映されるようにする。</p>
+<p>adocファイルを修正するとHTMLを出力し、
+ブラウザに修正がリアルタイムに反映されるようにします。</p>
 </div>
 <div class="sect3">
 <h4 id="_手順"><a class="anchor" href="#_手順"></a>3.2.1. 手順</h4>
 <div class="ulist">
 <ul>
 <li>
-<p>プロジェクト直下で下記を実行する。</p>
+<p>プロジェクト直下で下記を実行します。</p>
 </li>
 </ul>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="bash">$ cd AsciidocTemplate
-$ ./gradlew -t asciidoctor</code></pre>
+<pre class="CodeRay highlight"><code data-lang="bash">$ ./gradlew -t asciidoctor</code></pre>
 </div>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>もう一つ別のコマンドプロンプト(またはターミナル)を起動し、プロジェクト直下で下記を実行する。</p>
+<p>もう一つ別のコマンドプロンプト(またはターミナル)を起動し、プロジェクト直下で下記を実行します。</p>
 </li>
 </ul>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="bash">$ cd AsciidocTemplate
-$ ./gradlew liveReload</code></pre>
+<pre class="CodeRay highlight"><code data-lang="bash">$ ./gradlew liveReload</code></pre>
 </div>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Chromeで <a href="http://localhost:35729/html5/" class="bare">http://localhost:35729/html5/</a> を開く。</p>
+<p>Chromeで <a href="http://localhost:35729/html5/" class="bare">http://localhost:35729/html5/</a> を開きます。</p>
 </li>
 <li>
-<p>ChromeのLiveReload機能をONにする（右上にあるLiveReloadアイコンをクリックする）</p>
+<p>ChromeのLiveReload機能をONにします。（右上にあるLiveReloadアイコンをクリックします）</p>
 </li>
 <li>
-<p>この状態でadocファイルを編集するとブラウザにリアルタイムに反映される。</p>
+<p>この状態でadocファイルを編集するとブラウザに編集内容がリアルタイムに反映されます。</p>
 </li>
 </ul>
 </div>
@@ -1043,7 +1040,7 @@ $ ./gradlew liveReload</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p>プロジェクト直下の`gradle.properties`を編集する。</p>
+<p>プロジェクト直下の<code>gradle.properties</code>を編集します。</p>
 </li>
 </ul>
 </div>
@@ -1076,27 +1073,27 @@ org.gradle.daemon = true
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>コメントアウトしてプロキシのホストを指定する。</td>
+<td>コメントアウトしてプロキシのホストを指定します。</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>コメントアウトしてプロキシのポートを指定する。</td>
+<td>コメントアウトしてプロキシのポートを指定します。</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>認証が必要であれば、コメントアウトしてユーザ名を指定する。</td>
+<td>認証が必要であれば、コメントアウトしてユーザ名を指定します。</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>認証が必要であれば、コメントアウトしてパスワードを指定する。</td>
+<td>認証が必要であれば、コメントアウトしてパスワードを指定します。</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="5"></i><b>5</b></td>
-<td>プロキシ除外対象のホストがあれば<code>|</code>区切りで指定する。</td>
+<td>プロキシ除外対象のホストがあれば<code>|</code>区切りで指定します。</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="6"></i><b>6</b></td>
-<td>httpsも同様に設定が必要であればコメントアウトして、それぞれ値を指定する。</td>
+<td>httpsも同様に設定が必要であればコメントアウトして、それぞれ値を指定します。</td>
 </tr>
 </table>
 </div>
@@ -1106,7 +1103,7 @@ org.gradle.daemon = true
 <h2 id="_ページの公開方法"><a class="anchor" href="#_ページの公開方法"></a>5. ページの公開方法</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://pages.github.com/">GitHub Pages</a>を使用してドキュメントを公開できるように、ドキュメント生成時に<code>docs</code>フォルダ配下にもドキュメントを出力するようにしています。</p>
+<p><a href="https://pages.github.com/">GitHub Pages</a>を使用してドキュメントを公開できるように、ドキュメント生成時に<code>docs</code>フォルダ配下にもドキュメントを出力するようにしています。公開する場合は自分のリポジトリで書き手順を実施してください。</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1126,7 +1123,7 @@ org.gradle.daemon = true
 </div>
 <div id="footer">
 <div id="footer-text">
-最終更新 2017-06-03 15:49:43 JST
+最終更新 2017-06-03 16:14:28 JST
 </div>
 </div>
 </body>

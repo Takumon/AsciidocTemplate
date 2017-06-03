@@ -76,7 +76,7 @@ toc::[]
 
 
 == インストール方法
-* ``https://github.com/Takumon/AsciidocTemplate.git``をクローンする。（Gitクライアントをインストールしていない場合はGithubのlink::https://github.com/Takumon/AsciidocTemplate[Takumon/AsciidocTemplate]で btn:[Clone or downloadzip]  > btn:[Download ZIP] をクリックし、ダウンロードしてZIPファイルを解凍する）
+* ``https://github.com/Takumon/AsciidocTemplate.git``をクローンします。（Gitクライアントをインストールしていない場合はGithubのlink::https://github.com/Takumon/AsciidocTemplate[Takumon/AsciidocTemplate]で btn:[Clone or downloadzip]  > btn:[Download ZIP] をクリックし、ダウンロードしてZIPファイルを解凍してください）
 [source, bash]
 ----
 $ git clone https://github.com/Takumon/AsciidocTemplate.git
@@ -86,7 +86,7 @@ $ git clone https://github.com/Takumon/AsciidocTemplate.git
 include::{includedir}/usage.adoc[]
 
 == ページの公開方法
-link:https://pages.github.com/[GitHub Pages]を使用してドキュメントを公開できるように、ドキュメント生成時に``docs``フォルダ配下にもドキュメントを出力するようにしています。
+link:https://pages.github.com/[GitHub Pages]を使用してドキュメントを公開できるように、ドキュメント生成時に``docs``フォルダ配下にもドキュメントを出力するようにしています。公開する場合は自分のリポジトリで書き手順を実施してください。
 
 * Githubのリポジトリでbtn:[setting]を選択します。
 
